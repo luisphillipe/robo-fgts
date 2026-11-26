@@ -1,0 +1,15 @@
+Windows Registry Editor Version 5.00
+
+; Faz o Microsoft Edge escolher automaticamente o certificado do cliente
+; ao acessar o Conectividade Social V2 (sem abrir a janela de seleção).
+;
+; Se houver mais de um certificado instalado para o usuário, troque o filtro
+; vazio {} por um filtro pelo emissor ou pelo titular, por exemplo:
+;   {"pattern":"https://conectividadesocialv2.caixa.gov.br","filter":{"SUBJECT":{"CN":"NOME DA EMPRESA:12345678000199"}}}
+;
+; Para o Google Chrome, use a chave:
+;   HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\AutoSelectCertificateForUrls]
+"1"="{\"pattern\":\"https://conectividadesocialv2.caixa.gov.br\",\"filter\":{\"SUBJECT\":{\"CN\":\"TARGET SERVICOS EDUCACIONAIS LTDA:06108495000153\"}}}"
+"2"="{\"pattern\":\"https://sicse.caixa.gov.br\",\"filter\":{\"SUBJECT\":{\"CN\":\"TARGET SERVICOS EDUCACIONAIS LTDA:06108495000153\"}}}"
